@@ -1,0 +1,13 @@
+<!-- MAINPAGE. Uses default.html as a template -->
+{% extends 'default.html' %}
+{% block content %} 
+  <h1 class='text-center'>Books</h1>
+    {% for book in booklist %}
+      <div class='card'>
+        <div class='card-body'>
+          <p class='lead'>{{ book.book_name }}</p>
+          <a href="{% url 'demoapp:details' book.id %}" class="btn btn-primary btn-sm">Details</a>
+        </div>
+      </div>
+    {% endfor %}
+{% endblock %} 

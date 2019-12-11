@@ -1,0 +1,13 @@
+<!-- DETAILSPAGE. Uses default.html as a template -->
+{% extends 'default.html' %}
+{% block content %}
+  <h1 class="text-center">{{ book.book_name }}</h1>
+    <ul class="list-group mb-5">
+	    {% for details in book.details_set.all %}
+  	  <li class="list-group-item">
+		    {{ details.details_text }}
+	    </li>
+	    {% endfor %}
+    </ul>
+  <a class="btn btn-primary" href="{% url 'demoapp:index' %}">Return</a>
+{% endblock %}
